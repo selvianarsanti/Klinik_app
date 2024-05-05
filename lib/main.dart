@@ -1,24 +1,28 @@
-// Impor paket material dari Flutter
 import 'package:flutter/material.dart';
+//import 'ui/home_page.dart';
+//import 'column_widget.dart';
+import 'row_widget.dart';
+//import 'baris_kolom.dart';
+//import '/ui/beranda.dart';
 
-// Impor kelas PoliPage dari direktori 'ui'
-import '/ui/poli_page.dart';
+void main() {
+  runApp(const MyApp());
+}
 
-// Titik masuk aplikasi
-void main() => runApp(MyApp());
-
-// Widget utama dari aplikasi
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // Membuat dan mengembalikan widget MaterialApp
     return MaterialApp(
-      // Mengatur judul aplikasi
-      title: 'Klinik APP',
-      // Menonaktifkan banner debug
+      title: 'Klinik',
       debugShowCheckedModeBanner: false,
-      // Mengatur halaman utama aplikasi menjadi widget PoliPage
-      home: PoliPage(),
+      //home: ColumnWidget(),
+      home: RowWidget(),
+      //home: BarisKolom(),
+      //home: Beranda(),
+      //home: HomePage(),
     );
   }
 }

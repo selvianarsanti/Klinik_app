@@ -1,0 +1,73 @@
+List<Map> pegawai = [
+  {
+    'id': 1,
+    'nip': '12220446',
+    'nama': 'Selviana Dwi Sari Arsanti',
+    'tgllahir': '17 Mei 2004',
+    'nmrtlp': '089514934435',
+    'email': 'dwiselviana770@gmail.com',
+    'password': '111',
+  },
+  {
+    'id': 2,
+    'nip': '12220975',
+    'nama': 'Dhini Fia Julianti',
+    'tgllahir': '21 Juli 2004',
+    'nmrtlp': '081233459237',
+    'email': 'dhinifia@gmail.com',
+    'password': '222',
+  },
+  {
+    'id': 3,
+    'nip': '12220753',
+    'nama': 'Grace Selia Omega',
+    'tgllahir': '9 Juni 2004',
+    'nmrtlp': '085292860995',
+    'email': 'graceselia@gmail.com',
+    'password': '333',
+  },
+  {
+    'id': 4,
+    'nip': '12220987',
+    'nama': 'Sendy Nabila Putri',
+    'tgllahir': '12 Mei 2005',
+    'nmrtlp': '081214821516',
+    'email': 'sendynabila@gmail.com',
+    'password': '444',
+  },
+];
+
+List<Map> pasien = [
+  {
+    'id': 1,
+    'noRm': '120',
+    'nama': 'Diyah Tri Endri Astuti',
+    'tgllahir': '21 Juni 1971',
+    'nmrtlp': '085647918559',
+    'alamat': 'Klaten',
+  },
+  {
+    'id': 2,
+    'noRm': '125',
+    'nama': 'Afifah Dewi Pangestika',
+    'tgllahir': '1 Maret 1997',
+    'nmrtlp': '085311311001',
+    'alamat': 'Karanganyar',
+  },
+  {
+    'id': 3,
+    'noRm': '198',
+    'nama': 'Rizal Buchori',
+    'tgllahir': '18 Januari 2013',
+    'nmrtlp': '085748661335',
+    'alamat': 'Klaten',
+  },
+  {
+    'id': 4,
+    'noRm': '154',
+    'nama': 'Nessa Eryana',
+    'tgllahir': '16 Februari 2005',
+    'nmrtlp': '081292701326',
+    'alamat': 'Klaten',
+  },
+];
