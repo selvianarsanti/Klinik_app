@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart'; // Impor paket material.dart dari Flutter framework.
-import '../model/poli.dart'; // Impor file poli.dart dari direktori model.
+import '/model/poli.dart'; // Impor file poli.dart dari direktori model.
 import 'poli_detail.dart'; // Impor file poli_detail.dart dari direktori yang sama.
 
 class PoliItem extends StatelessWidget {

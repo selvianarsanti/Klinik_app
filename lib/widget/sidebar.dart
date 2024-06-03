@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart'; // Mengimpor package flutter/material.dart yang berisi widget dan utilitas UI dari Flutter.
 import '../ui/beranda.dart'; // Mengimpor file beranda.dart dari direktori ui.
 import '../ui/login.dart'; // Mengimpor file login.dart dari direktori ui.
-import '../ui/poli_page.dart'; // Mengimpor file poli_page.dart dari direktori ui.
+import '../ui/pasien/pasien_page.dart'; // Mengimpor file pasien_page.dart dari direktori ui.
+import '../ui/pegawai/pegawai_page.dart'; // Mengimpor file pegawai_page.dart dari direktori ui.
+import '../ui/poli/poli_page.dart'; // Mengimpor file poli_page.dart dari direktori ui.
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../model/data.dart';
-import '../model/pasien.dart';
+import '/model/data.dart';
+import '/model/pasien.dart';
 import 'pasien_item.dart';
 import 'pasien_form.dart';
 

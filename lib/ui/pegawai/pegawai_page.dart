@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../model/data.dart';
-import '../model/pegawai.dart';
-import 'pegawai_item.dart';
-import 'pegawai_form.dart';
+import '/model/data.dart';
+import '/model/pegawai.dart';
+import '/ui/pegawai/pegawai_item.dart';
+import '/ui/pegawai/pegawai_form.dart';
 
 class PegawaiPage extends StatefulWidget {
   const PegawaiPage({super.key});
