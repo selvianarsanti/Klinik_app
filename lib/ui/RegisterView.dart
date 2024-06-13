@@ -1,50 +1,44 @@
 import 'package:flutter/material.dart';
-import '/controller/login_controller.dart';
-import '/model/user_model.dart';
-import 'RegisterView.dart';
-import 'MainMenuScreen.dart';
+import '/controller/register_controller.dart';
 
-class LoginView extends StatefulWidget {
+class RegisterView extends StatefulWidget {
   @override
-  _LoginViewState createState() => _LoginViewState();
+  _RegisterViewState createState() => _RegisterViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterViewState extends State<RegisterView> {
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final LoginController _loginController = LoginController();
+  final RegisterController _registerController = RegisterController();
   bool _loading = false; // Penanganan loading state
 
-  // Fungsi untuk menangani tombol login
-  Future<void> _handleLogin() async {
+  // Fungsi untuk menangani tombol register
+  Future<void> _handleRegister() async {
+    String name = _nameController.text;
     String email = _emailController.text;
     String password = _passwordController.text;
-
-    UserModel user = UserModel(email: email, password: password);
 
     setState(() {
       _loading = true; // Menampilkan loading indicator
     });
 
-    bool isLoggedIn = await _loginController.login(user);
+    bool isRegistered =
+        await _registerController.register(name, email, password);
 
     setState(() {
       _loading = false; // Menyembunyikan loading indicator
     });
 
-    if (isLoggedIn) {
-      // Menampilkan pesan sukses dan navigasi ke layar utama
+    if (isRegistered) {
+      // Tampilkan pesan sukses dan navigasi kembali ke layar login
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Login successful!')));
-      // Navigasi ke layar menu utama (ganti dengan navigasi aktual Anda)
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => MainMenuScreen()),
-      );
+          .showSnackBar(SnackBar(content: Text('Registration successful!')));
+      Navigator.pop(context);
     } else {
-      // Menampilkan pesan kesalahan
+      // Tampilkan pesan kesalahan
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('Login gagal')));
+          .showSnackBar(SnackBar(content: Text('Registration failed')));
     }
   }
 
@@ -52,12 +46,17 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Register'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            // Kolom input name
+            TextField(
+              controller: _nameController,
+              decoration: InputDecoration(labelText: 'Name'),
+            ),
             // Kolom input email
             TextField(
               controller: _emailController,
@@ -69,20 +68,16 @@ class _LoginViewState extends State<LoginView> {
               decoration: InputDecoration(labelText: 'Password'),
               obscureText: true,
               onSubmitted: (value) =>
-                  _handleLogin(), // Menambahkan onSubmitted agar enter langsung login
+                  _handleRegister(), // Menambahkan onSubmitted
             ),
             SizedBox(height: 20),
-            // Tombol login
+            // Tombol register
             _loading
                 ? CircularProgressIndicator()
                 : ElevatedButton(
-                    onPressed: _handleLogin,
-                    child: Text('Login'),
+                    onPressed: _handleRegister,
+                    child: Text('Register'),
                   ),
-            TextButton(
-              onPressed: () {},
-              child: Text('Register'),
-            ),
           ],
         ),
       ),
